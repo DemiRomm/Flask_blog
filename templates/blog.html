@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Блог
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container"><h1>Блог</h1><br>
+
+    {% if articles|length > 0 %}
+
+        {% for el in articles %}
+            <div class="alert alert-secondary">
+                <h2>{{ el.author }}</h2>
+                <p>{{ el.title }}</p>
+                <p>{{ el.intro }}</p>
+                <p><b>Дата: {{ el.date.date() }}</b></p>
+                 <a href="/blog/{{ el.id }}" class="btn btn-warning">Читать полностью</a>
+            </div>
+        {% endfor %}
+    {% else %}
+    <p>Записи отсутствуют.</p>
+    {% endif %}
+    </div>
+
+
+{% endblock %}

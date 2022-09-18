@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+
+{% block body %}
+    <div class="container"><h1>Блог</h1><br>
+        <h1>{{ article.title }}</h1>
+
+        <div class="alert alert-secondary">
+            <h3>{{ article.author }}</h3>
+            <p>{{ article.text }}</p>
+            <p><b>Дата: {{ article.date.date() }}</b></p>
+            <a href="/blog/{{ article.id }}/delete" class="btn btn-danger">Удалить пост</a>
+            <a href="/blog/{{ article.id }}/edit" class="btn btn-success">Редактировать пост</a>
+        </div>
+    </div>
+{% endblock %}

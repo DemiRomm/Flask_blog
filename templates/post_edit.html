@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование статьи
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container"><h1>Редактирование статьи</h1></div><br>
+    <form method="post">
+        <input type="text" name="author" id="author" class="container form-control" value="{{ article.author }}" placeholder="Автор"><br>
+        <input type="text" name="title" id="title" class="container form-control" value="{{ article.title }}" placeholder="Название статьи"><br>
+        <input type="text" name="intro" id="intro" class="container form-control" value="{{ article.intro }}" placeholder="Анонс"><br>
+        <textarea name="text" id="text" class="container form-control" placeholder="Текст сообщения">{{ article.text }}</textarea><br>
+        <div class="container"><input type="submit" class="btn btn-success" value="Обновить"></div>
+
+    </form>
+
+
+
+{% endblock %}
